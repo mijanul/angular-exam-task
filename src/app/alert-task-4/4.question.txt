@@ -1,0 +1,6 @@
+Create one alert component with parent child relation 
+
+Pass title, description, alert type from parent to child & show the data in child component
+
+In child component create one close button, on click close send the event from child to parent 
+and close/discard the alert component from child 

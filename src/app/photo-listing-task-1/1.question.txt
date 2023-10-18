@@ -1,0 +1,13 @@
+Create a photo listing page
+
+API - https://jsonplaceholder.typicode.com/photos
+API DOC - https://jsonplaceholder.typicode.com/
+
+Load each photo using material card
+https://material.angular.io/components/card/overview
+
+Show the below data for each photo- 
+title
+photo - bind thumbnail url in card image
+
+On click each card it would be redirected to the URL (you will get the url from api response) 

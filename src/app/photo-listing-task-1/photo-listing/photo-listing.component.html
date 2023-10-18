@@ -1,0 +1,12 @@
+<mat-card
+  (click)="goToLink(photo.url)"
+  class="card"
+  *ngFor="let photo of photos"
+>
+  <img
+    class="card-image"
+    [src]="photo.thumbnailUrl"
+    [attr.alt]="photo.thumbnailUrl"
+  />
+  <h3>{{ photo.title }}</h3>
+</mat-card>

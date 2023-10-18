@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="byteForm" (ngSubmit)="onSubmit()" class="byte-form">
+    <label for="bytes">Converter - Enter Bytes: </label>
+    <input
+      class="input-number"
+      type="number"
+      id="bytes"
+      formControlName="bytes"
+      required
+      placeholder="in bytes"
+    />
+
+    <label for="type">Choose Type: </label>
+    <select id="type" formControlName="type">
+      <option value="mb">MB</option>
+      <option value="gb">GB</option>
+      <option value="tb">TB</option>
+    </select>
+
+    <!-- <button type="submit">Submit</button> -->
+  </form>
+
+  <div class="result" *ngIf="byteForm.value.bytes">
+    Result:
+    <span>{{ byteForm.value.bytes | formatSpace : byteForm.value.type }}</span>
+  </div>
+</div>

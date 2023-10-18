@@ -1,0 +1,10 @@
+<div class="container">
+  <button (click)="showChild = true" [disabled]="showChild">Show Child</button>
+  <app-child
+    *ngIf="showChild"
+    [title]="alertTitle"
+    [description]="alertDescription"
+    [alertType]="alertType"
+    (close)="closeAlert()"
+  ></app-child>
+</div>

@@ -1,0 +1,17 @@
+
+ 	
+Create a simple custom pipe which convert bytes to mb/gb or tb
+
+Sample usage - 
+
+bytes = 1099511627776
+
+<span>{{ bytes | formatSpace: 'mb' }}</span>
+<span>{{ bytes | formatSpace : 'gb'}}</span>
+<span>{{ bytes | formatSpace : 'tb'}}</span>
+
+
+
+Output - 1048576
+Output - 1024
+Output - 1

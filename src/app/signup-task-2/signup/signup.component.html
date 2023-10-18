@@ -1,0 +1,146 @@
+<div class="form-container">
+  <h2>Sign Up</h2>
+  <form [formGroup]="signupForm">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('firstName')?.hasError('required') &&
+          signupForm.get('firstName')?.touched
+        "
+      >
+        First Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('lastName')?.hasError('required') &&
+          signupForm.get('lastName')?.touched
+        "
+      >
+        Last Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('email')?.hasError('required') &&
+          signupForm.get('email')?.touched
+        "
+      >
+        Email is required.
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('email')?.hasError('email') &&
+          signupForm.get('email')?.touched
+        "
+      >
+        Invalid email format.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <input id="pass" type="password" formControlName="password" />
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('password')?.hasError('required') &&
+          signupForm.get('password')?.touched
+        "
+      >
+        Password is required.
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('password')?.hasError('pattern') &&
+          signupForm.get('password')?.touched
+        "
+      >
+        Password must be at least 6 characters long and contain one uppercase
+        letter, one digit, and one special character.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender">
+        <option *ngFor="let option of genderOptions" value="option">
+          {{ option }}
+        </option>
+      </select>
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('gender')?.hasError('required') &&
+          signupForm.get('gender')?.touched
+        "
+      >
+        Gender is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input id="age" type="number" formControlName="age" />
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('age')?.hasError('required') &&
+          signupForm.get('age')?.touched
+        "
+      >
+        Age is required.
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
+          (signupForm.get('age')?.hasError('min') ||
+            signupForm.get('age')?.hasError('max')) &&
+          signupForm.get('age')?.touched
+        "
+      >
+        Age must be greater than or equal to 18 years and maximum 150 years.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="checkbox" class="custom-checkbox">
+        <input
+          id="checkbox"
+          type="checkbox"
+          name="acceptTerms"
+          formControlName="acceptTerms"
+        />
+        <span class="checkmark"></span>
+        I accept the terms and conditions
+      </label>
+      <div
+        class="error-message"
+        *ngIf="
+          signupForm.get('acceptTerms')?.hasError('required') &&
+          signupForm.get('acceptTerms')?.touched
+        "
+      >
+        You must accept the terms and conditions to sign up.
+      </div>
+    </div>
+    <div class="button-group">
+      <button
+        type="submit"
+        [disabled]="!signupForm.valid"
+        [ngClass]="{ 'disabled-button': !signupForm.valid }"
+      >
+        Signup
+      </button>
+    </div>
+  </form>
+</div>

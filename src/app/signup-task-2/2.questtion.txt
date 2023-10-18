@@ -1,0 +1,14 @@
+Create a sign up form using angular reactive forms with proper validation
+
+Fields -
+
+First name - required
+Last name - required
+email - required & email validation
+Password - required & password validation - Min 6 char with minimum one uppercase, one numeric digit & one special char 
+Gender - Male/ Female - required
+Age - greater than 18 years
+Accept terms & condition checkbox - must be checked 
+
+Submit button - Button should be disabled until all the validation passed
+Also show the proper validation message below each input
