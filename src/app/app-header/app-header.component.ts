@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-header.component.scss'],
 })
 export class AppHeaderComponent {
-  path = '../../assets/questions/AngularExam/Sheet1.html';
+  path = 'https://bit.ly/angular-exam-questions';
   goToLink() {
     window.open(this.path, '_blank');
   }
